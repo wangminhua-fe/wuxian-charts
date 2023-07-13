@@ -1,0 +1,38 @@
+{
+  "name": "icharts",
+  "private": false,
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "./lib"
+  ],
+  "main": "./lib/index.umd.js",
+  "module": "./lib/index.es.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./lib/index.es.js",
+        "types": "./lib/index.d.ts"
+      },
+      "require": "./lib/index.umd.js"
+    }
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.2",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.0",
+    "vite-plugin-dts": "^3.2.0",
+    "vue-tsc": "^1.8.3"
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
+  }
+}
